@@ -1,0 +1,20 @@
+head
+style.
+	label, input, button {
+	margin: 10px;
+	}
+h1 Create Post
+form(action="/create" method="POST")
+	label(id="Họ tên") Họ tên
+	input(type="text", placeholder="Nhập vào họ tên", name="name")
+	br
+	label(id="code") Mã nhân viên
+	input(type="text", placeholder="Nhập mã Nhân viên", name="code")
+	br
+	label(id="phongban") Phòng Ban
+	input(type="text", placeholder="Phòng ban", name="phongban")
+	br
+	label(id="vitri") Vị trí công việc
+	input(type="text", placeholder="Vị trí", name="vitri")
+	br
+	button Create

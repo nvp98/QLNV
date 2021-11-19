@@ -1,0 +1,29 @@
+
+block edit
+    label UserName： #{data.name}
+    style 
+        include ../styles.css
+    hr
+    form(method='POST' action=`/update/${data.id}` class="form")
+        input(type="hidden" name="id" value=data.id)
+        table.list-edit
+            tr
+                th Họ tên
+                td
+                    input(type="text" name="name" value=data.name).text    
+            tr
+                th Mã nhân viên
+                td
+                    input(type="text" name="code" value=data.code).text
+            tr
+                th phongban
+                td 
+                    input(type="text" name="phongban" value=data.phongban).text
+            tr
+                th Vị trí công việc
+                td
+                    input(type="text" name="vitri" value=data.vitri).text
+            tr
+                td(colspan="2")
+                    button(type="submit" class="btn" style={background:'green'}).btn Save
+                    button(type="button" onclick="javascript: location.href='/'; " class="btn" style={background:'black'}).btn Back

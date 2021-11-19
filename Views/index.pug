@@ -1,0 +1,45 @@
+<!--Name of the file : ordered-lists.html-->
+doctype html
+html(lang='en')
+  head
+    title Quản lý nhân viên
+    style 
+      include ../styles.css
+  body
+    h1 Create Post
+    form(action="/" method="POST" class="form")
+      label(id="Họ tên") Họ tên
+      input(type="text", placeholder="Nhập vào họ tên", name="name")
+      br
+      label(id="code") Mã Nhân viên
+      input(type="text", placeholder="Nhập vào mã nhân viên", name="code")
+      br
+      label(id="phongban") Phòng ban
+      input(type="text", placeholder="Nhập vào phòng ban", name="phongban")
+      br
+      label(id="vitri") Vị trí công việc
+      input(type="text", placeholder="Nhập vào vị trí", name="vitri")
+      br
+      button(type="submit") create 
+<table style="width:100%;" border="1">
+    <tr>
+        <th>Mã Nhân Viên</th>
+        <th>Name</th>
+        <th>Phòng Ban</th>
+        <th>Vị trí</th>
+        <th>Chỉnh sửa</th>
+    </tr>
+    <tbody>
+        each record in records
+          tr 
+            td= record.name
+            td= record.code
+            td= record.phongban
+            td= record.vitri
+            td
+              //- button(type="button" onclick=`location.href=/${record.name} `).btn Delete 
+              a(href=`/edit/${record.id}`, title="Edit" style={background:"yellow"} ) Edit
+              a(href=`/delete/${record.id}`, title="Delete" onclick="return confirm('Delete user： #{record.id} ?');" style={background:'red',color:'white'}) Delete
+    </tbody>        
+</table>
+    
